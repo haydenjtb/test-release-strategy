@@ -2,7 +2,7 @@ name: Full Playwright Suite Test
 
 on:
   schedule:
-    # runs every Thursday @ 4pm
+    # runs every Thursday @ 2pm
     - cron: '0 14 * * 4'
 
 jobs:

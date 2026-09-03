@@ -1,0 +1,29 @@
+name: Automated Test And Deploy
+
+on:
+  schedule:
+    # runs every Thursday @ 6pm
+    - cron: '0 18 * * 4'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run xUnit Tests
+        run: echo "running unit tests"
+
+      - name: Run Playwright Essentials
+        run: echo "running Playwright Essentials"
+
+      - name: Run Configuration Check
+        run: echo "running Configuration Check"
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Deploy
+        run: echo "Swapping staging with prod..."
+
