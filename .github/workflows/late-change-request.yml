@@ -1,12 +1,15 @@
-name: PR Notification
+name: Late Change Approval
 
 on:
   pull_request:
-    types: [late-change-request]
+    types: [labeled]
 
 jobs:
   notify-pr:
     runs-on: ubuntu-latest
+
+    if: github.event.label.name == 'late-change-request'
+
     steps:
       - name: Request Late Change Approval
         env:
