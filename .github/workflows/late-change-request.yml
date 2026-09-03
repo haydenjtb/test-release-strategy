@@ -1,0 +1,17 @@
+name: PR Notification
+
+on:
+  pull_request:
+    types: [late-change-request]
+
+jobs:
+  notify-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request Late Change Approval
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --repo ${{ github.repository }} \
+            --body "🔔 @haydenjtb, this pull request is request a late change approval."
