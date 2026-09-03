@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  playwright:
+  playwright-essentials:
     runs-on: ubuntu-latest
 
     steps:
