@@ -2,12 +2,13 @@ name: PR Notification
 
 on:
   pull_request:
+    types: [late-change-request]
 
 jobs:
   notify-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Post Comment on PR
+      - name: Request Late Change Approval
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
