@@ -1,0 +1,15 @@
+name: Test Playwright Essentials
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Playwright Essentials
+        run: echo "Running just playwright-essentials"      
